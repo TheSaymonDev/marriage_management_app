@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/bindings/email_verification_binding.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/email_verification_screen.dart';
+import 'package:marriage_management_app/screens/home_screen/bindings/home_binding.dart';
 import 'package:marriage_management_app/screens/home_screen/home_screen.dart';
+import 'package:marriage_management_app/screens/message_screen/message_screen.dart';
 import 'package:marriage_management_app/screens/no_internet_screen/bindings/no_internet_binding.dart';
 import 'package:marriage_management_app/screens/no_internet_screen/no_internet_screen.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/bindings/otp_verification_binding.dart';
@@ -40,6 +42,10 @@ class AppPages {
         name: AppRoutes.setPasswordScreen,
         page: () => SetPasswordScreen(),
         binding: SetPasswordBinding()),
-    GetPage(name: AppRoutes.homeScreen, page: () => HomeScreen())
+    GetPage(
+        name: AppRoutes.homeScreen,
+        page: () => HomeScreen(),
+        binding: HomeBinding()),
+    GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen())
   ];
 }

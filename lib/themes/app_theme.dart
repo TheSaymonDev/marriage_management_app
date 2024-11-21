@@ -19,35 +19,46 @@ final lightTheme = ThemeData(
       onSurface: lightFontClr),
   textTheme: TextTheme(
     bodyLarge:
-        TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w400, height: 1),
+    TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w400, height: 1),
     bodyMedium:
-        TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w400, height: 1),
+    TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w400, height: 1),
     bodySmall:
-        TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400, height: 1),
+    TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400, height: 1),
     titleLarge:
-        TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w700, height: 1),
+    TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w700, height: 1),
     titleMedium:
-        TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700, height: 1),
+    TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700, height: 1),
     titleSmall:
-        TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700, height: 1),
+    TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700, height: 1),
   ),
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: primaryClr.withValues(alpha: 0.1),
-      hintStyle: TextStyle(fontSize: 20.sp, color: Colors.grey, fontFamily: 'Noto Sans Bengali', fontWeight: FontWeight.w400),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12.r),
-        borderSide: BorderSide(color: primaryClr, width: 2.w),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12.r),
-        borderSide: BorderSide(color: primaryClr, width: 2.w),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12.r),
-        borderSide: BorderSide(color: primaryClr, width: 2.w),
-      ),
-    )
+  appBarTheme: AppBarTheme(
+    backgroundColor: primaryClr
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: primaryClr.withValues(alpha: 0.1),
+    hintStyle: TextStyle(fontSize: 20.sp, color: Colors.grey, fontFamily: 'Noto Sans Bengali', fontWeight: FontWeight.w400),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12.r),
+      borderSide: BorderSide(color: primaryClr, width: 1.5.w),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12.r),
+      borderSide: BorderSide(color: primaryClr, width: 1.5.w),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12.r),
+      borderSide: BorderSide(color: primaryClr, width: 1.5.w),
+    ),
+  ),
+  navigationBarTheme: NavigationBarThemeData(
+      iconTheme:
+      const WidgetStatePropertyAll(IconThemeData(color: lightFontClr)),
+      labelTextStyle: WidgetStatePropertyAll(TextStyle(
+          fontSize: 18.sp, fontWeight: FontWeight.bold, color: lightFontClr)),
+      shadowColor: lightCardClr,
+      backgroundColor: lightBgClr,
+      indicatorColor: primaryClr.withValues(alpha: 0.3)),
 );
 
 final darkTheme = ThemeData(
@@ -79,4 +90,7 @@ final darkTheme = ThemeData(
     titleSmall:
         TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w700, height: 1),
   ),
+  appBarTheme: AppBarTheme(
+    backgroundColor: primaryClr
+  )
 );

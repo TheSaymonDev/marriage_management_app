@@ -6,4 +6,5 @@ class AppRoutes {
   static const otpVerificationScreen = '/otp_verification_screen';
   static const setPasswordScreen = '/set_password_screen';
   static const homeScreen = '/home_screen';
+  static const messageScreen = '/message_screen';
 }

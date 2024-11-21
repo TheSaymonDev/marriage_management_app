@@ -7,6 +7,7 @@ import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/sign_in_screen/controllers/sign_in_controller.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
 import 'package:marriage_management_app/utils/app_validators.dart';
+import 'package:marriage_management_app/widgets/custom_app_bar.dart';
 import 'package:marriage_management_app/widgets/custom_elevated_btn.dart';
 import 'package:marriage_management_app/widgets/custom_text_form_field.dart';
 
@@ -18,6 +19,10 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(
+        title: 'Sign In',
+        onPressed: () {},
+      ),
       body: Container(
         height: double.infinity.h,
         width: double.infinity.w,
@@ -26,7 +31,7 @@ class SignInScreen extends StatelessWidget {
           child: Form(
             child: Column(
               children: [
-                Gap(100.h),
+                Gap(60.h),
                 Lottie.asset('assets/lotties/sign_in.json', width: 200.w),
                 Text('Marriage Management',
                     style: Theme.of(context).textTheme.bodyLarge),
@@ -58,12 +63,31 @@ class SignInScreen extends StatelessWidget {
                                   : Icons.visibility,
                               color: Colors.grey)));
                 }),
-                Align(
-                  alignment: Alignment.topRight,
-                    child: TextButton(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        GetBuilder<SignInController>(
+                          builder: (controller) {
+                            return Checkbox(
+                              value: controller.isChecked,
+                              onChanged: (newValue) => controller.toggleIsChecked(newValue!),
+                              checkColor: Colors.white,
+                            );
+                          }
+                        ),
+                        Text('Remember me',
+                            style: Theme.of(context).textTheme.bodySmall)
+                      ],
+                    ),
+                    TextButton(
                         onPressed: () {
                           Get.toNamed(AppRoutes.emailVerificationScreen);
-                        }, child: Text('Forgot Password'))),
+                        },
+                        child: Text('Forgot Password')),
+                  ],
+                ),
                 CustomElevatedButton(
                     onPressed: () {
                       Get.toNamed(AppRoutes.homeScreen);
@@ -73,10 +97,13 @@ class SignInScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account?", style: Theme.of(context).textTheme.bodyMedium),
-                    TextButton(onPressed: (){
-                      Get.toNamed(AppRoutes.signUpScreen);
-                    }, child: Text('Sign Up'))
+                    Text("Don't have an account?",
+                        style: Theme.of(context).textTheme.bodyMedium),
+                    TextButton(
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.signUpScreen);
+                        },
+                        child: Text('Sign Up'))
                   ],
                 )
               ],

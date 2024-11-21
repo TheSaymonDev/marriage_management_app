@@ -6,6 +6,7 @@ import 'package:lottie/lottie.dart';
 import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/controllers/otp_verification_controller.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
+import 'package:marriage_management_app/widgets/custom_app_bar.dart';
 import 'package:marriage_management_app/widgets/custom_elevated_btn.dart';
 import 'package:marriage_management_app/widgets/custom_text_form_field.dart';
 
@@ -17,6 +18,9 @@ class OtpVerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: 'OTP Verification', onPressed: (){
+        Get.back();
+      }),
       body: Container(
         height: double.infinity.h,
         width: double.infinity.w,
@@ -25,7 +29,7 @@ class OtpVerificationScreen extends StatelessWidget {
           child: Form(
             child: Column(
               children: [
-                Gap(120.h),
+                Gap(100.h),
                 Lottie.asset('assets/lotties/otp.json',width: 200.w),
                 Gap(16.h),
                 Text('Marriage Management', style: Theme.of(context).textTheme.bodyLarge),
