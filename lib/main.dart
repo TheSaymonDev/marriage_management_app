@@ -8,7 +8,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesService().init();
   runApp( MyApp(
-    initialRoute: AppRoutes.signUpScreen
+    initialRoute: AppRoutes.getStartedScreen
   ));
 }
 

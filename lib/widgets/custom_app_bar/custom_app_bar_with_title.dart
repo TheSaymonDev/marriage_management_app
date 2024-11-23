@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marriage_management_app/utils/app_colors.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
+class CustomAppBarWithTitle extends StatelessWidget implements PreferredSizeWidget{
 
   final void Function()? onPressed;
-  final String title;
-  const CustomAppBar({super.key, this.onPressed, required this.title});
+  final String? title;
+  const CustomAppBarWithTitle({super.key, this.onPressed, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +16,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
           onPressed: onPressed,
           icon: Icon(
             CupertinoIcons.arrow_left_circle_fill,
-            color: Colors.white,
           )),
       centerTitle: true,
-      title: Text(title,
+      title: Text(title ?? '',
           style: Theme.of(context)
               .textTheme
               .titleMedium!

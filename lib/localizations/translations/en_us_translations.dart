@@ -1,4 +1,51 @@
 final Map<String, String> enUs = {
+  // for get started screen
+  'gssTitle': 'Your Journey to Forever Begins Here',
+  'gssSubTitle': 'Plan, celebrate, and cherish every moment with ease. Your dream marriage, managed beautifully.',
+  'gssBtn': 'Get Started',
+
+  // for choose mode screen
+  'cmsTitle': 'Choose Mode',
+  'cmsDarkMode': 'Dark Mode',
+  'cmsLightMode': 'Light Mode',
+  'cmsContinueBtn': 'Continue',
+
+  // for auth screen
+  'asTitle': 'Your Journey to Forever Begins Here',
+  'asSubTitle': 'Plan, celebrate, and cherish every moment with ease. Your dream marriage, managed beautifully.',
+  'asRegisterBtn': 'Register',
+  'asSignInBtn': 'Sign In',
+
+  // for signin screen
+  'sisTitle': 'Sign In',
+  'sisSubTitle': 'If You Need Any Support ',
+  'sisClickBtn': 'Click Here',
+  'sisEmailHint': 'Enter Username or Email',
+  'sisPasswordHint': 'Password',
+  'sisRecoveryPasswordBtn': 'Recovery Password',
+  'sisSignInBtn': 'Sign In',
+  'sisNotMember': 'Not a Member ? ',
+  'sisRegister': 'Register Now',
+
+  // for email verification screen
+  'evsTitle': 'Email Verification',
+  'evsSubTitle': 'Verify your email to proceed! We’ve sent a confirmation link to your inbox. Please click the link to activate your account and continue your journey with us.',
+  'evsEmailHint': 'Email',
+  'evsSendCodeBtn': 'Send Code',
+
+  // for otp verification screen
+  'ovsTitle': 'OTP Verification',
+  'ovsSubTitle': 'Enter the 6-digit code sent to your email to verify your identity.',
+  'ovsOtpHint': 'OTP',
+  'ovsVerifyBtn': 'Verify',
+
+  // for set password screen
+  'spsTitle': 'Set Password',
+  'spsSubTitle': "Create a strong password to secure your account. Make sure it's at least 8 characters long, includes letters, numbers, and a special character.",
+  'spsNewPasswordHint': 'New Password',
+  'spsConfirmPasswordHint': 'Confirm Password',
+  'spsVerifyBtn': 'Set Password',
+
   // for signup screen
   'susAppbarTitle': 'CREATE ACCOUNT',
   'susLogInBtn': 'LOGIN',
@@ -40,7 +87,4 @@ final Map<String, String> enUs = {
   'susEthnicityHint': 'Ethnicity',
   'susAboutMeLabel': 'About me',
   'susAboutMeHint': 'Min 50 Characters',
-  'sus': '',
-  'sus': '',
-  'sus': '',
 };

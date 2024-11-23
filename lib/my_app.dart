@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         getPages: AppPages.pages,
         initialBinding: AppInitialBindings(),
         theme: lightTheme,
-        darkTheme: lightTheme,
+        darkTheme: darkTheme,
         themeMode: ThemeMode.system,
       ),
     );

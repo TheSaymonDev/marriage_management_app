@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
 
-class CustomElevatedButton extends StatelessWidget {
+class CustomElevatedBtn extends StatelessWidget {
   final VoidCallback onPressed;
   final String name;
   final double? width;
   final double? height;
 
-  const CustomElevatedButton({
+  const CustomElevatedBtn({
     super.key,
     required this.onPressed,
     required this.name,
@@ -21,16 +20,16 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? double.infinity.w,
-      height: height ?? 50.h,
+      height: height ?? 56.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: primaryClr,
-            foregroundColor: lightBgClr,
+            backgroundColor: AppColors.primaryClr,
+            foregroundColor: AppColors.lightBgClr,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r)),
+                borderRadius: BorderRadius.circular(30.r)),
             padding: EdgeInsets.zero),
         onPressed: onPressed,
-        child: Text(name, style: Get.textTheme.titleMedium!.copyWith(color: Colors.white)),
+        child: Text(name, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppColors.darkFontClr)),
       ),
     );
   }

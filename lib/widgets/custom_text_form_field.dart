@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:marriage_management_app/utils/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -30,7 +29,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       style: Theme.of(context).textTheme.bodyMedium,
       controller: controller,
-      cursorColor: secondaryClr,
+      //cursorColor: AppColors.secondaryClr,
       readOnly: readOnly,
       obscureText: obscureText,
       validator: validator,
@@ -39,7 +38,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText ?? 'writeHere'.tr,
         suffixIcon: suffixIcon,
-        contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       ),
     );
   }

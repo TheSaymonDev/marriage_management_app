@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/set_password_screen/controllers/set_password_controller.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
 import 'package:marriage_management_app/utils/app_validators.dart';
-import 'package:marriage_management_app/widgets/custom_app_bar.dart';
+import 'package:marriage_management_app/widgets/custom_app_bar/custom_app_bar_with_logo.dart';
 import 'package:marriage_management_app/widgets/custom_elevated_btn.dart';
 import 'package:marriage_management_app/widgets/custom_text_form_field.dart';
 
@@ -19,7 +18,7 @@ class SetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Set Password', onPressed: (){
+      appBar: CustomAppBarWithLogo(onPressed: () {
         Get.back();
       }),
       body: Container(
@@ -30,20 +29,24 @@ class SetPasswordScreen extends StatelessWidget {
           child: Form(
             child: Column(
               children: [
-                Gap(60.h),
-                Lottie.asset('assets/lotties/set_password.json',width: 220.w),
-                Text('Marriage Management', style: Theme.of(context).textTheme.bodyLarge),
-                Gap(8.h),
-                Text('Online marriage media platform',
+                Gap(140.h),
+                Text('spsTitle'.tr,
                     style: Theme.of(context)
                         .textTheme
-                        .bodySmall!
-                        .copyWith(color: secondaryClr)),
-                Gap(48.h),
+                        .titleLarge!
+                        .copyWith(fontSize: 30.sp)),
+                Gap(30.h),
+                Text('spsSubTitle'.tr,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: context.isDarkMode
+                            ? AppColors.darkGreyClr
+                            : AppColors.lightGreyClr),
+                    textAlign: TextAlign.center),
+                Gap(60.h),
                 GetBuilder<SetPasswordController>(builder: (controller) {
                   return CustomTextFormField(
                       controller: controller.newPasswordController,
-                      hintText: 'Confirm Password',
+                      hintText: 'spsNewPasswordHint'.tr,
                       validator: AppValidators.passwordValidator,
                       obscureText: controller.isObscureNew,
                       suffixIcon: IconButton(
@@ -54,13 +57,14 @@ class SetPasswordScreen extends StatelessWidget {
                               controller.isObscureNew
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: Colors.grey)));
+                              size: 20.sp,
+                              color: context.isDarkMode? AppColors.lightGreyClr: AppColors.darkGreyClr)));
                 }),
-                Gap(16.h),
+                Gap(15.h),
                 GetBuilder<SetPasswordController>(builder: (controller) {
                   return CustomTextFormField(
                       controller: controller.confirmPasswordController,
-                      hintText: 'New Password',
+                      hintText: 'spsConfirmPasswordHint'.tr,
                       validator: AppValidators.passwordValidator,
                       obscureText: controller.isObscureConfirm,
                       suffixIcon: IconButton(
@@ -71,14 +75,15 @@ class SetPasswordScreen extends StatelessWidget {
                               controller.isObscureConfirm
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: Colors.grey)));
+                              size: 20.sp,
+                              color: context.isDarkMode? AppColors.lightGreyClr: AppColors.darkGreyClr)));
                 }),
-                Gap(32.h),
-                CustomElevatedButton(
+                Gap(20.h),
+                CustomElevatedBtn(
                     onPressed: () {
                       Get.offAllNamed(AppRoutes.signInScreen);
                     },
-                    name: 'SET PASSWORD')
+                    name: 'spsVerifyBtn'.tr)
               ],
             ),
           ),
