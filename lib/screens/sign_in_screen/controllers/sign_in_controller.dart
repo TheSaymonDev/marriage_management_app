@@ -22,8 +22,8 @@ class SignInController extends GetxController {
     update();
   }
 
-  void _setLoading(bool value) {
-    isLoading = value;
-    update();
-  }
+  // void _setLoading(bool value) {
+  //   isLoading = value;
+  //   update();
+  // }
 }

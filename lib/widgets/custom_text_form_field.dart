@@ -29,7 +29,6 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       style: Theme.of(context).textTheme.bodyMedium,
       controller: controller,
-      //cursorColor: AppColors.secondaryClr,
       readOnly: readOnly,
       obscureText: obscureText,
       validator: validator,

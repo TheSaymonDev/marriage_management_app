@@ -33,8 +33,6 @@ final lightTheme = ThemeData(
       TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w700, height: 1),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      //filled: true,
-      //fillColor: primaryClr.withValues(alpha: 0.1),
       hintStyle: TextStyle(fontSize: 16.sp, color: AppColors.darkGreyClr, fontWeight: FontWeight.w400),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.r),
@@ -50,8 +48,12 @@ final lightTheme = ThemeData(
       ),
     ),
     appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.lightBgClr
-    )
+        backgroundColor: Colors.white
+    ),
+  navigationBarTheme: NavigationBarThemeData(
+    backgroundColor: Colors.white,
+    indicatorColor: AppColors.primaryClr.withValues(alpha: 0.3)
+  )
 );
 
 final darkTheme = ThemeData(
@@ -85,23 +87,25 @@ final darkTheme = ThemeData(
       TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w700, height: 1),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      //filled: true,
-      //fillColor: primaryClr.withValues(alpha: 0.1),
       hintStyle: TextStyle(fontSize: 16.sp, color: AppColors.lightGreyClr, fontWeight: FontWeight.w400),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide(color: Colors.white12, width: 1.w),
+        borderSide: BorderSide(color: Colors.white24, width: 1.w),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide(color: Colors.white12, width: 1.w),
+        borderSide: BorderSide(color: Colors.white24, width: 1.w),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide(color: Colors.white12, width: 1.w),
+        borderSide: BorderSide(color: Colors.white24, width: 1.w),
       ),
     ),
     appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.darkBgClr
+      backgroundColor: Color(0xFF232323),
+    ),
+    navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: Color(0xFF232323),
+        indicatorColor: AppColors.primaryClr.withValues(alpha: 0.3)
     )
 );

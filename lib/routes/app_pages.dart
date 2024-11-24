@@ -8,8 +8,6 @@ import 'package:marriage_management_app/screens/get_started_screen/get_started_s
 import 'package:marriage_management_app/screens/home_screen/bindings/home_binding.dart';
 import 'package:marriage_management_app/screens/home_screen/home_screen.dart';
 import 'package:marriage_management_app/screens/message_screen/message_screen.dart';
-import 'package:marriage_management_app/screens/no_internet_screen/bindings/no_internet_binding.dart';
-import 'package:marriage_management_app/screens/no_internet_screen/no_internet_screen.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/bindings/otp_verification_binding.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/otp_verification_screen.dart';
 import 'package:marriage_management_app/screens/set_password_screen/bindings/set_password_binding.dart';
@@ -32,10 +30,10 @@ class AppPages {
         name: AppRoutes.signInScreen,
         page: () => SignInScreen(),
         binding: SignInBinding()),
-    // GetPage(
-    //     name: AppRoutes.signUpScreen,
-    //     page: () => SignUpScreen(),
-    //     binding: SignUpBinding()),
+    GetPage(
+        name: AppRoutes.signUpScreen,
+        page: () => SignUpScreen(),
+        binding: SignUpBinding()),
     GetPage(
         name: AppRoutes.emailVerificationScreen,
         page: () => EmailVerificationScreen(),
@@ -48,10 +46,10 @@ class AppPages {
         name: AppRoutes.setPasswordScreen,
         page: () => SetPasswordScreen(),
         binding: SetPasswordBinding()),
-    // GetPage(
-    //     name: AppRoutes.homeScreen,
-    //     page: () => HomeScreen(),
-    //     binding: HomeBinding()),
-    // GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen())
+    GetPage(
+        name: AppRoutes.homeScreen,
+        page: () => HomeScreen(),
+        binding: HomeBinding()),
+    GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen())
   ];
 }

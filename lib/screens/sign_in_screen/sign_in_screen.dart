@@ -87,7 +87,9 @@ class SignInScreen extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleMedium)),
               ),
               CustomElevatedBtn(
-                  onPressed: () {}, name: 'sisSignInBtn'.tr),
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.homeScreen);
+                  }, name: 'sisSignInBtn'.tr),
               Gap(50.h),
               Row(
                 children: [
@@ -118,7 +120,7 @@ class SignInScreen extends StatelessWidget {
                           .titleMedium!
                           .copyWith(color: Colors.blue),
                       recognizer: TapGestureRecognizer()..onTap = () {
-                        //Get.toNamed(AppRoutes.signUpScreen);
+                        Get.toNamed(AppRoutes.signUpScreen);
                       },
                     ),
                   ],

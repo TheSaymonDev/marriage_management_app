@@ -43,7 +43,9 @@ class AuthScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   CustomElevatedBtn(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoutes.signUpScreen);
+                      },
                       name: 'asRegisterBtn'.tr,
                       width: 150.w,
                       height: 75.h),

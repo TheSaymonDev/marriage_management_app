@@ -10,7 +10,7 @@ class ConnectivityService {
       bool result = await _connectivity.hasInternetAccess;
       return result;
     } catch (e) {
-      print("Error checking internet connection: $e");
+      // print("Error checking internet connection: $e");
       return false;
     }
   }

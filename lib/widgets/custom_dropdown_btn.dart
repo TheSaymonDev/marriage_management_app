@@ -35,12 +35,11 @@ class CustomDropdownBtn extends StatelessWidget {
       value: value,
       hint: Text(
         hintText ?? 'select'.tr,
-        style: Theme.of(context).textTheme.bodyMedium,
       ),
-      style: Theme.of(context).textTheme.bodySmall,
+      style: Theme.of(context).textTheme.bodyMedium,
       iconStyleData: IconStyleData(
         icon: value == null
-            ? Icon(Icons.keyboard_arrow_down, color: AppColors.primaryClr, size: 25.sp)
+            ? Icon(Icons.keyboard_arrow_down, color: context.isDarkMode? AppColors.lightGreyClr: AppColors.darkGreyClr, size: 20.sp)
             : SizedBox.shrink(), // Empty widget when value is selected
       ),
       dropdownStyleData: DropdownStyleData(
@@ -52,27 +51,13 @@ class CustomDropdownBtn extends StatelessWidget {
         padding: EdgeInsets.only(left: 20.w, right: 8.w),
       ),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 8.w),
-        filled: true,
-        fillColor: AppColors.primaryClr.withValues(alpha: 0.1),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
         suffixIcon: value != null
             ? IconButton(
-                icon: Icon(Icons.clear, color: AppColors.primaryClr, size: 25.sp),
+                icon: Icon(Icons.clear,  size: 20.sp),
                 onPressed: () => onChanged(null), // Clear selection
               )
             : null,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.primaryClr, width: 1.5.w),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.primaryClr, width: 1.5.w),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.primaryClr, width: 1.5.w),
-        ),
       ),
     );
   }
