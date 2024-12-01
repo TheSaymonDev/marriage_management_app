@@ -7,6 +7,7 @@ class CustomElevatedBtn extends StatelessWidget {
   final String name;
   final double? width;
   final double? height;
+  final TextStyle? style;
 
   const CustomElevatedBtn({
     super.key,
@@ -14,6 +15,7 @@ class CustomElevatedBtn extends StatelessWidget {
     required this.name,
     this.width,
     this.height,
+    this.style
   });
 
   @override
@@ -29,7 +31,7 @@ class CustomElevatedBtn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.r)),
             padding: EdgeInsets.zero),
         onPressed: onPressed,
-        child: Text(name, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppColors.darkFontClr)),
+        child: Text(name, style: style ?? Theme.of(context).textTheme.titleMedium!.copyWith(color: AppColors.darkFontClr)),
       ),
     );
   }

@@ -102,10 +102,10 @@ final darkTheme = ThemeData(
       ),
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.darkCardClr,
     ),
     navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: Color(0xFF232323),
+        backgroundColor: AppColors.darkCardClr,
         indicatorColor: AppColors.primaryClr.withValues(alpha: 0.3)
     )
 );

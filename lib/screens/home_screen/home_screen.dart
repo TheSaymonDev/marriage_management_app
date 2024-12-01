@@ -7,6 +7,7 @@ import 'package:marriage_management_app/screens/home_screen/controllers/bottom_n
 import 'package:marriage_management_app/screens/profile_screen/profile_screen.dart';
 import 'package:marriage_management_app/screens/upgrade_screen/upgrade_screen.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
+import 'package:marriage_management_app/widgets/custom_app_bar/custom_app_bar_with_logo.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,34 +15,31 @@ class HomeScreen extends StatelessWidget {
   static final _screens = [
     const ExploreScreen(),
     ChatListScreen(),
-    const UpgradeScreen(),
+    UpgradeScreen(),
     const ProfileScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<BottomNavController>(
-      builder: (controller) {
-        return Scaffold(
-          body: _screens.elementAt(controller.selectedIndex),
-          bottomNavigationBar: NavigationBar(
-            height: 92.h,
-            onDestinationSelected: controller.changeScreen,
-            selectedIndex: controller.selectedIndex,
-            destinations: [
-              _buildNavigationDestination(
-                  iconData: Icons.home, label: 'Home'),
-              _buildNavigationDestination(
-                  iconData: Icons.chat, label: 'Chat'),
-              _buildNavigationDestination(
-                  iconData: Icons.workspace_premium, label: 'Upgrade'),
-              _buildNavigationDestination(
-                  iconData: Icons.person, label: 'Profile')
-            ],
-          ),
-        );
-      }
-    );
+    return GetBuilder<BottomNavController>(builder: (controller) {
+      return Scaffold(
+        appBar: CustomAppBarWithLogo(onPressed: () {}),
+        body: _screens.elementAt(controller.selectedIndex),
+        bottomNavigationBar: NavigationBar(
+          height: 92.h,
+          onDestinationSelected: controller.changeScreen,
+          selectedIndex: controller.selectedIndex,
+          destinations: [
+            _buildNavigationDestination(iconData: Icons.home, label: 'Home'),
+            _buildNavigationDestination(iconData: Icons.chat, label: 'Chat'),
+            _buildNavigationDestination(
+                iconData: Icons.workspace_premium, label: 'Upgrade'),
+            _buildNavigationDestination(
+                iconData: Icons.person, label: 'Profile')
+          ],
+        ),
+      );
+    });
   }
 
   NavigationDestination _buildNavigationDestination({
@@ -54,5 +52,4 @@ class HomeScreen extends StatelessWidget {
       label: label,
     );
   }
-
 }

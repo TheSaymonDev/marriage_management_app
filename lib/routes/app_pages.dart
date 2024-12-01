@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/auth_screen/auth_screen.dart';
 import 'package:marriage_management_app/screens/choose_mode_screen/choose_mode_screen.dart';
+import 'package:marriage_management_app/screens/details_screen/details_screen.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/bindings/email_verification_binding.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/email_verification_screen.dart';
 import 'package:marriage_management_app/screens/get_started_screen/get_started_screen.dart';
@@ -16,6 +17,7 @@ import 'package:marriage_management_app/screens/sign_in_screen/bindings/sign_in_
 import 'package:marriage_management_app/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:marriage_management_app/screens/sign_up_screen/bindings/sign_up_binding.dart';
 import 'package:marriage_management_app/screens/sign_up_screen/sign_up_screen.dart';
+import 'package:marriage_management_app/screens/upgrade_screen/bindings/upgrade_binding.dart';
 
 class AppPages {
   static final pages = [
@@ -49,7 +51,11 @@ class AppPages {
     GetPage(
         name: AppRoutes.homeScreen,
         page: () => HomeScreen(),
-        binding: HomeBinding()),
-    GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen())
+        bindings: [HomeBinding(), UpgradeBinding()]),
+    GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen()),
+    GetPage(
+        name: AppRoutes.detailsScreen,
+        page: () => DetailsScreen(),
+       )
   ];
 }
