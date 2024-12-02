@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/utils/app_colors.dart';
 import 'package:marriage_management_app/utils/app_urls.dart';
 import 'package:marriage_management_app/widgets/custom_elevated_btn.dart';
@@ -35,7 +36,11 @@ class ProfileScreen extends StatelessWidget {
                         children: [
                           Text('MD. SAYMON',
                               style: Theme.of(context).textTheme.titleMedium),
-                          Icon(Icons.edit, size: 20.sp)
+                          GestureDetector(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.detailsUpdateScreen);
+                              },
+                              child: Icon(Icons.edit, size: 20.sp))
                         ],
                       ),
                       Gap(8.h),

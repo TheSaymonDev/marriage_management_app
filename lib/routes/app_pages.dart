@@ -3,6 +3,7 @@ import 'package:marriage_management_app/routes/app_routes.dart';
 import 'package:marriage_management_app/screens/auth_screen/auth_screen.dart';
 import 'package:marriage_management_app/screens/choose_mode_screen/choose_mode_screen.dart';
 import 'package:marriage_management_app/screens/details_screen/details_screen.dart';
+import 'package:marriage_management_app/screens/details_update_screen/details_update_screen.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/bindings/email_verification_binding.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/email_verification_screen.dart';
 import 'package:marriage_management_app/screens/get_started_screen/get_started_screen.dart';
@@ -53,9 +54,8 @@ class AppPages {
         page: () => HomeScreen(),
         bindings: [HomeBinding(), UpgradeBinding()]),
     GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen()),
+    GetPage(name: AppRoutes.detailsScreen, page: () => DetailsScreen()),
     GetPage(
-        name: AppRoutes.detailsScreen,
-        page: () => DetailsScreen(),
-       )
+        name: AppRoutes.detailsUpdateScreen, page: () => DetailsUpdateScreen())
   ];
 }
