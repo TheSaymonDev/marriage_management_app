@@ -73,17 +73,23 @@ class ProfileScreen extends StatelessWidget {
               title: 'Favourites'),
           _buildListTile(
               context: context,
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.helpCenterScreen);
+              },
               icon: Icons.help,
               title: 'Help Center'),
           _buildListTile(
               context: context,
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.privacyPolicyScreen);
+              },
               icon: Icons.privacy_tip,
               title: 'Privacy Policy'),
           _buildListTile(
               context: context,
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.aboutUsScreen);
+              },
               icon: Icons.info,
               title: 'About Us'),
           _buildListTile(

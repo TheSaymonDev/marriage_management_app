@@ -12,4 +12,7 @@ class AppRoutes {
   static const messageScreen = '/message_screen';
   static const detailsScreen = '/details_screen';
   static const detailsUpdateScreen = '/details_update_screen';
+  static const helpCenterScreen = '/help_center_screen';
+  static const privacyPolicyScreen = '/privacy_policy_screen';
+  static const aboutUsScreen = '/about_us_screen';
 }

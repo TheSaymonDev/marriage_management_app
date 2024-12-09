@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:marriage_management_app/routes/app_routes.dart';
+import 'package:marriage_management_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:marriage_management_app/screens/auth_screen/auth_screen.dart';
 import 'package:marriage_management_app/screens/choose_mode_screen/choose_mode_screen.dart';
 import 'package:marriage_management_app/screens/details_screen/details_screen.dart';
@@ -7,11 +8,14 @@ import 'package:marriage_management_app/screens/details_update_screen/details_up
 import 'package:marriage_management_app/screens/email_verification_screen/bindings/email_verification_binding.dart';
 import 'package:marriage_management_app/screens/email_verification_screen/email_verification_screen.dart';
 import 'package:marriage_management_app/screens/get_started_screen/get_started_screen.dart';
+import 'package:marriage_management_app/screens/help_center_screen/bindings/help_center_binding.dart';
+import 'package:marriage_management_app/screens/help_center_screen/help_center_screen.dart';
 import 'package:marriage_management_app/screens/home_screen/bindings/home_binding.dart';
 import 'package:marriage_management_app/screens/home_screen/home_screen.dart';
 import 'package:marriage_management_app/screens/message_screen/message_screen.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/bindings/otp_verification_binding.dart';
 import 'package:marriage_management_app/screens/otp_verification_screen/otp_verification_screen.dart';
+import 'package:marriage_management_app/screens/privacy_policy_screen/privacy_policy_screen.dart';
 import 'package:marriage_management_app/screens/set_password_screen/bindings/set_password_binding.dart';
 import 'package:marriage_management_app/screens/set_password_screen/set_password_screen.dart';
 import 'package:marriage_management_app/screens/sign_in_screen/bindings/sign_in_binding.dart';
@@ -56,6 +60,18 @@ class AppPages {
     GetPage(name: AppRoutes.messageScreen, page: () => MessageScreen()),
     GetPage(name: AppRoutes.detailsScreen, page: () => DetailsScreen()),
     GetPage(
-        name: AppRoutes.detailsUpdateScreen, page: () => DetailsUpdateScreen())
+        name: AppRoutes.detailsUpdateScreen, page: () => DetailsUpdateScreen()),
+    GetPage(
+        name: AppRoutes.helpCenterScreen,
+        page: () => HelpCenterScreen(),
+        binding: HelpCenterBinding()),
+    GetPage(
+      name: AppRoutes.privacyPolicyScreen,
+      page: () => PrivacyPolicyScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.aboutUsScreen,
+      page: () => AboutUsScreen(),
+    )
   ];
 }

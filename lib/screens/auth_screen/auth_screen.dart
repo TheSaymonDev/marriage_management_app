@@ -16,7 +16,7 @@ class AuthScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBarWithTitle(onPressed: () {
         Get.back();
-      }),
+      }, title: '',),
       body: SizedBox(
         height: double.infinity.h,
         width: double.infinity.w,
